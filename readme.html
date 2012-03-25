@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
 <head>
-	<title>Snitz Forums MOD - MOD TITLE</title>
+	<title>Snitz Forums MOD - Sticky Topic Separator</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="author" content="Bill Parrott" />
 	<meta name="robots" content="index,follow" />
@@ -56,7 +56,7 @@
 		#difficultyBar {}
 		#installTxt {background-color: #fff; width: 650px; margin: 1em 25px; border: 1px solid #8080a0; height: 375px; overflow: scroll; padding: 5px;}
 		#installTxt h4 {margin-top: 0;}
-		#installTxt .txtChanges {background-color: #e0e0e0; border: 1px solid #e0e0e0;}
+		#installTxt .txtChanges {background-color: #e0e0e0; border: 1px solid #e0e0e0; width: 100%; height: 250px; overflow: scroll;}
 		.reqChange {color: #f00;}
 		.optChange {color: #0a0;}
 		#installationDiv ul, #installationDiv ol, #changelogDiv ul, #uninstallationDiv ol {margin-left: 2em;}
@@ -96,7 +96,7 @@
 				<li><a href="#description" title="General overview"><span>Description</span></a></li>
 				<li><a href="#installation" title="Installation instructions"><span>Installation</span></a></li>
 				<!--<li><a href="#upgrading" title="Upgrading the MOD from an older version"><span>Upgrading</span></a></li>-->
-				<li><a href="#features" title="Instructions on how to use the MOD's features"><span>Features</span></a></li>
+				<!--<li><a href="#features" title="Instructions on how to use the MOD's features"><span>Features</span></a></li>-->
 				<li><a href="#uninstallation" title="How to uninstall the MOD"><span>Uninstallation</span></a></li>
 				<li><a href="#changelog" title="Changes made to the MOD from version to version"><span>Change Log</span></a></li>
 				<!--<li><a href="#faq" title="Frequently Asked Questions about this MOD"><span>FAQ</span></a></li>-->
@@ -112,7 +112,7 @@
 				<strong>Tested Databases:</strong> n/a<br />
 				<strong>Last Updated:</strong> 2007/12/05<br />
 				<strong>Download Link:</strong> LINK<br />
-				<p id="descNotes">Short description of the MOD</p>
+				<p id="descNotes">This MOD helps distinguish between sticky topics and regular topics on forum.asp. Sticky topics remain above the rest of the topics, but they are labeled with a header of "Important Topics". The rest of the topics are separated by a bar reading "Forum Topics". This helps clarify the intent of sticky topics.</p>
 				<p id="descSupport">For support, please visit the <a href="http://forum.snitz.com/forum/forum.asp?FORUM_ID=94" title="MOD Implementation forum; please direct your questions here" onclick="return !window.open(this.href);">MOD Implementation</a> forum at the Snitz website.</p>
 			</div>
 			<h3><a name="installation" class="nolink">Installation</a></h3>
@@ -132,7 +132,7 @@
 				<div id="file1">
 					<h4>Installation instructions for: forum.asp</h4>
 					Find this block of code at lines 457-528:<br />
-<div class="txtChanges" style="width: 100%; height: 250px; overflow: scroll;"><pre>
+<div class="txtChanges"><pre>
 	rec = 1
 	for iTopic = 0 to iTopicCount
 		if (rec = strPageSize + 1) then exit for
@@ -207,7 +207,7 @@
 		Response.Write	"&lt;/a&gt;&lt;/td&gt;" &amp; vbNewLine &amp; _
 </pre></div><br />
 					Edit that block to look like this:<br />
-<div class="txtChanges" style="width: 100%; height: 250px; overflow: scroll;"><pre>
+<div class="txtChanges"><pre>
 	<span class="reqChange">blnStickyTopics = False</span>
 	rec = 1
 	for iTopic = 0 to iTopicCount
@@ -309,9 +309,9 @@
 			<!--<h3><a name="upgrading" class="nolink">Upgrading</a></h3>
 			<div id="upgradingDiv">
 			</div>-->
-			<h3><a name="features" class="nolink">Features</a></h3>
+			<!--<h3><a name="features" class="nolink">Features</a></h3>
 			<div id="featuresDiv">
-			</div>
+			</div>-->
 			<h3><a name="uninstallation" class="nolink">Uninstallation</a></h3>
 			<div id="uninstallationDiv">
 				<h4>Restore using your backup files</h4>
